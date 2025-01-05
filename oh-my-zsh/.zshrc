@@ -31,9 +31,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -61,13 +61,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+# History settings
+HISTFILE=~/.zsh_history 
+HISTSIZE=1000
+SAVEHIST=1000
+HIST_STAMPS="%y/%m/%d %T"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -77,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autocomplete zsh-autosuggestions zsh-bat)
+plugins=(git zsh-bat docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,14 +110,31 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+export JAVA_HOME=$HOME/.sdkman/candidates/java/current
+export PATH=$JAVA_HOME/bin:$PATH
 
 # Alias
 alias nzsh='nano -l ~/.zshrc'
 alias cl='clear'
 alias oh='cd ~ || echo "Welcome to home"'
 alias sz='source ~/.zshrc'
+alias nwt='nano -l ~/.wezterm.lua'
+## Docker
+alias dk="sudo systemctl enable docker "
+alias dkmysql="sudo docker start mysql "
+alias dkredis="sudo docker start redis "
 
 PATH=~/.console-ninja/.bin:$PATH
+
+# Load config 
+for file in $ZSH_CUSTOM/plugins/*.plugin.zsh; do
+    source $file
+done

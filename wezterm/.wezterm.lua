@@ -35,7 +35,7 @@ config.window_background_image_hsb = {
 }
 
 local background_folder = user_home .. "/.config/bg"
-config.window_background_image=user_home .. "solo-leveling.png"
+config.window_background_image=background_folder .. "/1358894.png"
 local function pick_random_background(folder)
     local handle = io.popen('ls "' .. folder .. '"')
     local files = handle:read("*a")
