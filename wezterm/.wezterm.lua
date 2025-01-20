@@ -7,6 +7,9 @@ local config = wezterm.config_builder()
 config.enable_tab_bar = true
 config.window_decorations = "RESIZE"
 
+config.default_prog = { '/home/linuxbrew/.linuxbrew/bin/zsh' }
+
+
 -- For example, changing the color scheme:
 config.color_scheme = "Dracula (Official)"
 config.tab_bar_at_bottom = true
@@ -30,7 +33,7 @@ local user_home = os.getenv("HOME")
 
 config.window_background_image_hsb = {
 	hue = 1.0,
-	saturation = 0.7,
+	saturation = 0.9,
 	brightness = 0.1
 }
 

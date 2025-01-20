@@ -1,0 +1,8 @@
+tap "homebrew/bundle"
+tap "sdkman/tap"
+brew "neovim"
+brew "nvm"
+brew "stow"
+brew "tldr"
+brew "zsh"
+brew "sdkman/tap/sdkman-cli"
