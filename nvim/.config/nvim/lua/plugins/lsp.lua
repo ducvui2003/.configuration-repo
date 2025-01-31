@@ -1,16 +1,15 @@
 return {
-     {
-    "hrsh7th/nvim-cmp",
-        dependencies = {
-        "hrsh7th/cmp-nvim-lsp", -- Add this dependency for LSP integration
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        "saadparwaiz1/cmp_luasnip", -- for snippet support
-        "rafamadriz/friendly-snippets", -- snippet collection
-        },
-    },
     {
         "williamboman/mason.nvim",
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗",
+                },
+            },
+        },
         -- config = function()
         -- 	require("mason").setup()
         -- end,
@@ -44,13 +43,17 @@ return {
                             enable = false,
                         },
                     },
+                    keymaps = {
+                        goto_definition = "gD",
+                        hover = "K",
+                        rename = "gR",
+                    },
                 },
             })
             -- typescript
             lspconfig.ts_ls.setup({
                 capabilities = capabilities,
             })
-        
             -- yaml
             lspconfig.yamlls.setup({
                 capabilities = capabilities,
@@ -100,3 +103,4 @@ return {
         end,
     },
 }
+

@@ -1,6 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	dependencies =  {
+		"windwp/nvim-ts-autotag"
+	},
 	config = function()
 		local config = require("nvim-treesitter.configs")
 		config.setup({
@@ -8,9 +11,9 @@ return {
 			auto_install = true,
 			-- add language you want to highlight in code
 			ensure_installed = {
-				"c",
-				"lua",
 				"vim",
+				"vimdoc",
+				"lua",
 				"javascript",
 				"typescript",
 				"tsx",
@@ -24,6 +27,7 @@ return {
 			},
 			sync_install = false,
 			highlight = { enable = true },
+			autotag = { enable = true },
 			indent = { enable = true },
 		})
 	end,
