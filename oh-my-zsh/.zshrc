@@ -63,6 +63,7 @@ alias cl='clear'
 alias oh='cd ~ || echo "Welcome to home"'
 alias sz='source ~/.zshrc'
 alias nwt='nvim ~/.wezterm.lua'
+alias dotfiles="cd ~/.dotfiles"
 
 # Nvim
 alias sv="source ~/.config/nvim/init.lua"
@@ -80,7 +81,7 @@ alias dkmongo="sudo docker start mongodb_container "
 alias backup_brew="brew bundle dump --file=~/Brewfile --force --no-vscode || echo 'backup success' "
 
 ## Eza
-alias ls='eza --icons ' # Basic replacement for ls with eza --icons 
+#################################alias ls='eza --icons ' # Basic replacement for ls with eza --icons 
 alias l='eza --icons  --long -bF' # Extended details with binary sizes and type indicators
 alias ll='eza --icons  --long -a' # Long format, including hidden files
 alias llm='eza --icons  --long -a --sort=modified' # Long format, including hidden files, sorted by modification date

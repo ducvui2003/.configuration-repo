@@ -7,12 +7,11 @@ local config = wezterm.config_builder()
 config.enable_tab_bar = true
 config.window_decorations = "RESIZE"
 
-config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/zsh" }
-
 -- For example, changing the color scheme:
 config.color_scheme = "Dracula (Official)"
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
+config.enable_tab_bar = false
 
 config.font = wezterm.font("JetBrains Mono", {
 	weight = "Medium",
@@ -37,7 +36,7 @@ config.window_background_image_hsb = {
 }
 
 local background_folder = user_home .. "/.config/bg"
-config.window_background_image = background_folder .. "/1358894.png"
+config.window_background_image = background_folder .. "/zero2.png"
 local function pick_random_background(folder)
 	local handle = io.popen('ls "' .. folder .. '"')
 	local files = handle:read("*a")
@@ -55,17 +54,7 @@ local function pick_random_background(folder)
 	end
 end
 
--- Clock
-local function get_clock()
-	return os.date("%H:%M:%S") -- Current time in "HH:MM:SS" format
-end
-
-wezterm.on("update-status", function(window, pane)
-	window:set_right_status(wezterm.format({
-		{ Text = get_clock() },
-	}))
-end)
-wezterm.on("window-created", function(window, pane)
+wezterm.on("window-created", function(window)
 	local new_background = pick_random_background(background_folder)
 	if new_background then
 		window:set_config_overrides({
@@ -76,8 +65,6 @@ wezterm.on("window-created", function(window, pane)
 		wezterm.log_error("Could not find bg image")
 	end
 end)
-
-config.status_update_interval = 1
 
 -- Keys
 config.keys = {
