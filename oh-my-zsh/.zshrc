@@ -64,6 +64,9 @@ alias oh='cd ~ || echo "Welcome to home"'
 alias sz='source ~/.zshrc'
 alias nwt='nvim ~/.wezterm.lua'
 alias dotfiles="cd ~/.dotfiles"
+alias dkn8n="sudo docker start n8n"
+alias wp="cd ~/Data/workspace "
+alias uni="cd ~/Data/university "
 
 # Nvim
 alias sv="source ~/.config/nvim/init.lua"
@@ -79,6 +82,7 @@ alias dkmysql="sudo docker start mysql-container "
 alias dkredis="sudo docker start redis "
 alias dkmongo="sudo docker start mongodb_container "
 alias backup_brew="brew bundle dump --file=~/Brewfile --force --no-vscode || echo 'backup success' "
+
 
 ## Eza
 #################################alias ls='eza --icons ' # Basic replacement for ls with eza --icons 
@@ -108,5 +112,6 @@ alias lmod='eza --long --modified --sort=modified' # Sort by modification date i
 alias ldepth='eza --level=2' # Limit recursion depth to 2
 alias lignore='eza --git-ignore' # Ignore files mentioned in .gitignore
 alias lcontext='eza --long --context' # Show security context
-PATH=~/.console-ninja/.bin:$PATH
 
+
+export JAVA_HOME=/home/ducvui2003/.asdf/installs/java/openjdk-21
