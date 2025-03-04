@@ -60,3 +60,6 @@ vim.opt.smartcase = true -- match case if explicitly stated
 
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+
+
+

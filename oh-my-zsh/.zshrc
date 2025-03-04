@@ -67,6 +67,7 @@ alias dotfiles="cd ~/.dotfiles"
 alias dkn8n="sudo docker start n8n"
 alias wp="cd ~/Data/workspace "
 alias uni="cd ~/Data/university "
+alias lzy="lazydocker"
 
 # Nvim
 alias sv="source ~/.config/nvim/init.lua"
