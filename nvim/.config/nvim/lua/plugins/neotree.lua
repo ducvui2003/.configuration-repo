@@ -11,7 +11,7 @@ return {
         vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Toggle [E]xplorer" })
         require("neo-tree").setup({
             window = {
-                width = 20,
+                width = 40,
             },
         })
     end,

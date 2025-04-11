@@ -102,7 +102,7 @@ config.keys = {
 	{
 		key = "B",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action_callback(function(window, pane)
+		action = wezterm.action_callback(function(window)
 			local new_background = pick_random_background(background_folder)
 			if new_background then
 				window:set_config_overrides({ window_background_image = new_background })
@@ -112,6 +112,11 @@ config.keys = {
 			end
 		end),
 	},
+    {
+        key = " ",
+        mods = "CTRL",
+        action = wezterm.action.SendKey { key = ' ', mods = 'CTRL'},
+    }
 }
 
 return config

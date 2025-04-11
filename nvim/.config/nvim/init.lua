@@ -17,5 +17,8 @@ local opts = {}
 vim.opt.rtp:prepend(lazypath)
 
 require("config.options")
+require("config.helper-floating")
+require("config.helper-func")
+require("config.term-float")
 require("config.keymaps")
 require('lazy').setup('plugins', opts)

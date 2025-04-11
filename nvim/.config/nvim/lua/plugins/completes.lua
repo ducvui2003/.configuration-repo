@@ -36,7 +36,8 @@ return {
 					{ name = "path" },
 					{ name = "pylsp" },
 					{ name = "ts_ls" },
-                    { name = "zls"},
+					{ name = "zls" },
+                    { name = "ts_ls"}
 				}),
 			})
 		end,

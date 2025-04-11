@@ -28,7 +28,6 @@ autoload -U  compinit && compinit
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-export JAVA_HOME="$HOME/.asdf/plugins/java/set-java-home.zsh"
 # Theme
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -86,7 +85,7 @@ alias backup_brew="brew bundle dump --file=~/Brewfile --force --no-vscode || ech
 
 
 ## Eza
-#################################alias ls='eza --icons ' # Basic replacement for ls with eza --icons 
+alias ls='eza --icons ' # Basic replacement for ls with eza --icons 
 alias l='eza --icons  --long -bF' # Extended details with binary sizes and type indicators
 alias ll='eza --icons  --long -a' # Long format, including hidden files
 alias llm='eza --icons  --long -a --sort=modified' # Long format, including hidden files, sorted by modification date
@@ -94,7 +93,7 @@ alias la='eza --icons  -a --group-directories-first' # Show all files, with dire
 alias lx='eza --icons  -a --group-directories-first --extended' # Show all files and extended attributes, directories first
 alias tree='eza --icons  --tree' # Tree view
 alias lS='eza --icons  --oneline' # Display one entry per line
-
+        
 # new aliases than exa-zsh
 alias lT='eza --tree --long' # Tree view with extended details
 alias lr='eza --recurse --all' # Recursively list all files, including hidden ones
@@ -115,4 +114,5 @@ alias lignore='eza --git-ignore' # Ignore files mentioned in .gitignore
 alias lcontext='eza --long --context' # Show security context
 
 
-export JAVA_HOME=/home/ducvui2003/.asdf/installs/java/openjdk-21
+. ~/.asdf/plugins/golang/set-env.zsh 
+. ~/.asdf/plugins/java/set-java-home.zsh

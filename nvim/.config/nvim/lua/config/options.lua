@@ -1,18 +1,3 @@
--- vim.cmd("set expandtab")
--- vim.cmd("set tabstop=4")
--- vim.cmd("set softtabstop=4")
--- vim.cmd("set shiftwidth=4")
--- vim.g.mapleader = " "
--- vim.cmd("set number")
--- vim.cmd("set relativenumber")
--- vim.cmd("set cursorline")
-
--- -- Move selected line / block of text in visual mode
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
--- vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-
 vim.opt.colorcolumn = "94"
 
 -- Left column and similar settings
@@ -49,7 +34,6 @@ vim.opt.undofile = true -- enable persistent undo
 vim.opt.updatetime = 100 -- set faster completion
 vim.opt.writebackup = false -- prevent editing of files being edited elsewhere
 vim.opt.cursorline = true -- highlight current line
-vim.api.nvim_set_option("clipboard", "unnamed")
 
 
 -- Searching Behaviors
@@ -61,5 +45,4 @@ vim.opt.smartcase = true -- match case if explicitly stated
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
 
-
-
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
