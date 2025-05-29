@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7.4.2-alpine
+    container_name: redis
+    ports:
+      - "${REDIS_PORT}:6379"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-123}
+    volumes:
+      - ecommerce_redis_data:/data
+
+volumes:
+  ecommerce_redis_data:

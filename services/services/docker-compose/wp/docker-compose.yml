@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: wordpress-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress_user
+      MYSQL_PASSWORD: wordpress_pass
+    volumes:
+      - /home/ducvui2003/wp/mysql:/var/lib/mysql
+    ports:
+      - "3307:3306" # Change host port to 3307
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress-app
+    depends_on:
+      - mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306 # Update port in WordPress DB connection
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress_user
+      WORDPRESS_DB_PASSWORD: wordpress_pass
+      PHP_MEMORY_LIMIT: 512M
+      UPLOAD_MAX_FILESIZE: 128M
+      POST_MAX_SIZE: 128M
+    volumes:
+      - /home/ducvui2003/wp/app:/var/www/html
+    ports:
+      - "8080:80"
