@@ -14,6 +14,9 @@ REDIS_ENV=./services/docker-compose/redis/.env
 POSTGRES_COMPOSE=./services/docker-compose/postgresql/docker-compose.yml
 POSTGRES_ENV=./services/docker-compose/postgresql/.env
 
+JENKINS_COMPOSE=./services/docker-compose/jenkins/docker-compose.yml
+JENKINS_ENV=./services/docker-compose/jenkins/.env
+
 # MySQL
 mysql_up:
 	bash services/scripts/up.sh ${MYSQL_COMPOSE} ${MYSQL_ENV}
@@ -48,3 +51,10 @@ postgres_up:
 
 postgres_stop:
 	bash services/scripts/stop.sh ${POSTGRES_COMPOSE} ${POSTGRES_ENV}
+
+#  Jenkins
+jenkins_up:
+	bash services/scripts/up.sh ${JENKINS_COMPOSE} ${JENKINS_ENV}
+
+jenkins_stop:
+	bash services/scripts/stop.sh ${JENKINS_COMPOSE} ${JENKINS_ENV}

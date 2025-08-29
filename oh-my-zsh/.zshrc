@@ -60,6 +60,7 @@ export PATH=$JAVA_HOME/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$AN
 alias nzsh='nvim ~/.zshrc'
 alias cl='clear'
 alias oh='cd ~ || echo "Welcome to home"'
+alias pre='cd - || echo "Back"'
 alias sz='source ~/.zshrc'
 alias nwt='nvim ~/.wezterm.lua'
 alias dotfiles="cd ~/.dotfiles"
@@ -67,6 +68,9 @@ alias dkn8n="sudo docker start n8n"
 alias wp="cd ~/Data/workspace "
 alias uni="cd ~/Data/university "
 alias lzy="lazydocker"
+# Xclip
+alias c="xclip -selection clipboard"
+alias v="xclip -selection clipboard -o"
 
 # Nvim
 alias sv="source ~/.config/nvim/init.lua"
@@ -116,3 +120,9 @@ alias lcontext='eza --long --context' # Show security context
 
 . ~/.asdf/plugins/golang/set-env.zsh 
 . ~/.asdf/plugins/java/set-java-home.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ducvui2003/.ssh/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ducvui2003/.ssh/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ducvui2003/.ssh/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ducvui2003/.ssh/google-cloud-sdk/completion.zsh.inc'; fi
