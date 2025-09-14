@@ -126,5 +126,3 @@ if [ -f '/home/ducvui2003/.ssh/google-cloud-sdk/path.zsh.inc' ]; then . '/home/d
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ducvui2003/.ssh/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ducvui2003/.ssh/google-cloud-sdk/completion.zsh.inc'; fi
-
-if [ -e /home/ducvui2003/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ducvui2003/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -70,6 +70,9 @@ return {
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.rnix.setup({
+                capabilities = capabilities,
+            })
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			--java
 			lspconfig.jdtls.setup({
