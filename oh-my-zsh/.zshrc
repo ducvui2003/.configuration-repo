@@ -51,11 +51,6 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-# Android
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$JAVA_HOME/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
-
 # Alias
 alias nzsh='nvim ~/.zshrc'
 alias cl='clear'
@@ -120,9 +115,3 @@ alias lcontext='eza --long --context' # Show security context
 
 . ~/.asdf/plugins/golang/set-env.zsh 
 . ~/.asdf/plugins/java/set-java-home.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/ducvui2003/.ssh/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ducvui2003/.ssh/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/ducvui2003/.ssh/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ducvui2003/.ssh/google-cloud-sdk/completion.zsh.inc'; fi

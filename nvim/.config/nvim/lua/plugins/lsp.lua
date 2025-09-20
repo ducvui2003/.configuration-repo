@@ -8,6 +8,7 @@ return {
 					package_pending = "➜",
 					package_uninstalled = "✗",
 				},
+				check_outdated_packages_on_open = true,
 			},
 		},
 	},
@@ -28,7 +29,6 @@ return {
 			})
 		end,
 	},
-
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
@@ -71,8 +71,8 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.rnix.setup({
-                capabilities = capabilities,
-            })
+				capabilities = capabilities,
+			})
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			--java
 			lspconfig.jdtls.setup({
